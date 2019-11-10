@@ -1,1 +1,1 @@
-# GAN_Project
+# Paper_Project
