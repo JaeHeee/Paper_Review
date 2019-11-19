@@ -9,3 +9,4 @@
 * GAN
 * DCGAN
 * InfoGAN
+* CGAN
