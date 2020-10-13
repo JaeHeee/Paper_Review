@@ -8,7 +8,7 @@
 <br>
 <br>
 
-### CNN 🏗️
+### CNN Architecture 🏗️
 -----
 
 | Num.|Name|Description|Review|Code|Paper|
