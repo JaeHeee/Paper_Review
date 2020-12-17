@@ -14,10 +14,10 @@ class ResidualBlock(nn.Module):
 		super(ResidualBlock, self).__init__()
 		self.conv1 = conv3x3(in_channels, out_channels, stride)
 		self.bn1 = nn.BatchNorm2d(out_channels)
-		self.relu = nn.ReLU(inplace=True)
+		self.relu = nn.ReLU()
 		self.conv2 = conv3x3(out_channels, out_channels)
 		self.bn2 = nn.BatchNorm2d(out_channels)
-		self.downsample = downsaple
+		self.downsample = downsample
 
 	def forward(self, x):
 		residual = x
@@ -41,8 +41,8 @@ class ResNet(nn.Module):
 		super(ResNet, self).__init__()
 		self.in_channels = 16
 		self.conv = conv3x3(3, 16)
-		self.bn == nn.BatchNorm2d(16)
-		self.relu == nn.ReLU(inplace=True)
+		self.bn = nn.BatchNorm2d(16)
+		self.relu = nn.ReLU(inplace=True)
 		self.layer1 = self.make_layer(block, 16, layers[0])
 		self.layer2 = self.make_layer(block, 32, layers[1], 2)
 		self.layer3 = self.make_layer(block, 64, layers[2], 2)
@@ -83,12 +83,12 @@ class ResNet(nn.Module):
 
 class Solver(object):
 	def __init__(self, args):
-		self.device = torch.device('cuda') if torch.cuda.is_available() else 'cpu')
+		self.device = torch.device('cuda') if torch.cuda.is_available() else 'cpu'
 		self.train_dataset = DatasetCIFAR10(True)
 		self.test_dataset = DatasetCIFAR10(False)
 		self.batch_size = args.batch_size
 		self.learning_rate = args.learning_rate
-		self.num_epochs = args.epochs
+		self.num_epochs = args.num_epochs
 	
 	def update_lr(self, optimizer, lr):
 		for param_group in optimizer.param_groups:
@@ -96,8 +96,8 @@ class Solver(object):
 
 
 	def solve(self):
-		train_loader = torch.utils.data.DataLoader(dataset=self.train_dataset, batch_size=self.batch_size, shuffle=True)
-		test_loader = torch.utils.data.DataLoader(dataset=self.test_dataset, batch_size=self.batch_size, shuffle=False)
+		train_loader = torch.utils.data.DataLoader(dataset=self.train_dataset.__getitem(), batch_size=self.batch_size, shuffle=True)
+		test_loader = torch.utils.data.DataLoader(dataset=self.test_dataset.__getitem(), batch_size=self.batch_size, shuffle=False)
 
 		model = ResNet(ResidualBlock, [2, 2, 2]).to(self.device)
 		
@@ -105,7 +105,7 @@ class Solver(object):
 		optimizer = torch.optim.Adam(model.parameters(), lr=self.learning_rate)
 		
 		total_step = len(train_loader)
-		curr_lr = learnig_rate
+		curr_lr = self.learning_rate
 		for epoch in range(self.num_epochs):
 			for i, (images, labels) in enumerate(train_loader):
 				images = images.to(self.device)
@@ -126,7 +126,7 @@ class Solver(object):
 				update_lr(optimizer, curr_lr)
 
 		model.eval()
-		with torch.no_grad()
+		with torch.no_grad():
 			correct = 0
 			total = 0
 			for images, labels in test_loader:
