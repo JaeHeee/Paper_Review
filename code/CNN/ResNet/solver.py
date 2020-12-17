@@ -137,6 +137,6 @@ class Solver(object):
 				total += labels.size(0)
 				correct += (predicted == labels).sum().item()
 
-			print('Accuracy of the model on the test images: {100 * correct/total} %')
+			print(f'Accuracy of the model on the test images: {100 * correct/total} %')
 		
 		torch.save(model.state_dict(), 'resnet.pt')
