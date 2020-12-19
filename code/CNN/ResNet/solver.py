@@ -96,8 +96,8 @@ class Solver(object):
 
 
 	def solve(self):
-		train_loader = torch.utils.data.DataLoader(dataset=self.train_dataset.__getitem(), batch_size=self.batch_size, shuffle=True)
-		test_loader = torch.utils.data.DataLoader(dataset=self.test_dataset.__getitem(), batch_size=self.batch_size, shuffle=False)
+		train_loader = torch.utils.data.DataLoader(dataset=self.train_dataset.__getitem__(), batch_size=self.batch_size, shuffle=True)
+		test_loader = torch.utils.data.DataLoader(dataset=self.test_dataset.__getitem__(), batch_size=self.batch_size, shuffle=False)
 
 		model = ResNet(ResidualBlock, [2, 2, 2]).to(self.device)
 		
