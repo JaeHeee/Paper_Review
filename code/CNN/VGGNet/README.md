@@ -1,6 +1,6 @@
 # VGGNet
 
-VGGNet PyTorch and Tensorflow implementation
+VGGNet PyTorch and TensorFlow implementation
 
 ### Reference
 https://github.com/msyim/VGG16
