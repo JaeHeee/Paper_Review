@@ -9,7 +9,7 @@ class DatasetCIFAR100(object):
         if train:
             self.imgs = torchvision.datasets.CIFAR100(root='../data', train=True, transform=self.transform, download=True)
         else:
-            self.imgs = torchvision.datasets.CIFAR100(root='../data', train=True, transform=self.transform)
+            self.imgs = torchvision.datasets.CIFAR100(root='../data', train=False, transform=self.transform)
 
     def __getitem__(self):
         return self.imgs
