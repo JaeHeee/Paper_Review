@@ -26,4 +26,5 @@
 
 | Num.|Name|Description|Review|Code|Paper|
 |:---:|---|:---:|---|---|---|
-| 1 | Rich feature hierarchies for accurate object detection and semantic segmentation | R-CNN | [Review](https://www.notion.so/jaeheee/Rich-feature-hierarchies-for-accurate-object-detection-and-semantic-segmentation-4d928e67aba046cabc2617a850bcb1aa) | ---  | [Paper](https://arxiv.org/pdf/1311.2524.pdf)|
+| 1 | Rich feature hierarchies for accurate object detection and semantic segmentation | R-CNN | [Review](https://www.notion.so/jaeheee/Rich-feature-hierarchies-for-accurate-object-detection-and-semantic-segmentation-4d928e67aba046cabc2617a850bcb1aa) | ----- | [Paper](https://arxiv.org/pdf/1311.2524.pdf)|
+| 2 | Fast R-CNN | Fast R-CNN | [Review](https://www.notion.so/Fast-R-CNN-abc31ad1c55f4e8084c29f95dbeb3238) | ----- | [Paper](https://arxiv.org/pdf/1504.08083.pdf)|
