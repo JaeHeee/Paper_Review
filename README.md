@@ -28,3 +28,4 @@
 |:---:|---|:---:|---|---|---|
 | 1 | Rich feature hierarchies for accurate object detection and semantic segmentation | R-CNN | [Review](https://www.notion.so/jaeheee/Rich-feature-hierarchies-for-accurate-object-detection-and-semantic-segmentation-4d928e67aba046cabc2617a850bcb1aa) | ----- | [Paper](https://arxiv.org/pdf/1311.2524.pdf)|
 | 2 | Fast R-CNN | Fast R-CNN | [Review](https://www.notion.so/Fast-R-CNN-abc31ad1c55f4e8084c29f95dbeb3238) | ----- | [Paper](https://arxiv.org/pdf/1504.08083.pdf)|
+| 3 | Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks | Faster R-CNN | [Review](https://www.notion.so/Faster-R-CNN-Towards-Real-Time-Object-Detection-with-Region-Proposal-Networks-d8a09ec27e32407ca629d0e0cf2bdccf) | ----- | [Paper](https://arxiv.org/pdf/1506.01497.pdf)|
